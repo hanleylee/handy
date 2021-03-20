@@ -89,6 +89,5 @@ PROMPT="
 %F{yellow}%n%f@%F{magenta}%m%f \
 %F{cyan}%B%~%f%b\
 $git_info  $exit_code  $hl_time_on_right
-%F{green}$%f 
-"
+%F{green}$%f "
 
