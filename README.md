@@ -2,7 +2,7 @@
 
 An extremely light weight zsh prompt.
 
-![himg](https://a.hanleylee.com/HKMS/2021-03-21102157.png?x-oss-process=style/WaMa)
+![himg](img/example.png)
 
 ## Install
 
@@ -30,3 +30,13 @@ An extremely light weight zsh prompt.
     ```
 
     Done!
+
+## License
+
+All codes in this warehouse are distributed and used based on [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). For the full text of the agreement, see [LICENSE](https://github.com/HanleyLee/Handy/blob/main/LICENSE) file.
+
+Copyright 2021 HanleyLee
+
+---
+
+Welcome, if you have any bugs, I hope to raise issues. If it is useful to you, please mark a star ⭐️
