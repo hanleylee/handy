@@ -86,7 +86,7 @@ function _fish_collapsed_pwd() {
 # % ys in ~/.oh-my-zsh on git:master x [21:47:42] C:0
 # $
 PROMPT="
-%F{yellow}%n%f@%F{magenta}%m%f \
+%F{yellow}%n%f%F{white}@%f%F{yellow}%m%f \
 %F{cyan}%B%~%f%b\
 $git_info  $exit_code  $hl_time_on_right
 %F{green}$%f "
