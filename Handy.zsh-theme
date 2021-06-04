@@ -4,7 +4,7 @@
 
 # VCS
 YS_VCS_PROMPT_PREFIX1=" %{$fg[white]%}on%{$reset_color%} "
-YS_VCS_PROMPT_PREFIX2=":%{$fg[cyan]%}"
+YS_VCS_PROMPT_PREFIX2=":%{$fg[magenta]%}"
 YS_VCS_PROMPT_SUFFIX="%{$reset_color%}"
 YS_VCS_PROMPT_DIRTY=" %{$fg[red]%}x"
 YS_VCS_PROMPT_CLEAN=" %{$fg[green]%}o"
@@ -86,8 +86,8 @@ function _fish_collapsed_pwd() {
 # % ys in ~/.oh-my-zsh on git:master x [21:47:42] C:0
 # $
 PROMPT="
-%F{yellow}%n%f%F{white}@%f%F{yellow}%m%f \
-%F{cyan}%B%~%f%b\
+%F{yellow}%n%f%F{grey}@%f%F{green}%m%f \
+%F{blue}%B%~%f%b\
 $git_info  $exit_code  $hl_time_on_right
 %F{green}$%f "
 
