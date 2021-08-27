@@ -41,6 +41,7 @@ function align_right() {
 function get_date_time() {
     command date "+%H:%M:%S"
 }
+
 function _fish_collapsed_pwd() {
     local pwd="$1"
     local home="$HOME"
@@ -78,6 +79,14 @@ function _fish_collapsed_pwd() {
     local IFS="/"
     echo "${elements[*]}"
 }
+
+function echo_blank() {
+    echo
+}
+
+# preexec_functions+=echo_blank
+precmd_functions+=echo_blank
+
 # Prompt format:
 # PRIVILEGES USER @ MACHINE in DIRECTORY on git:BRANCH STATE [TIME] C:LAST_EXIT_CODE
 # $ COMMAND
@@ -85,9 +94,10 @@ function _fish_collapsed_pwd() {
 # For example:
 # % ys in ~/.oh-my-zsh on git:master x [21:47:42] C:0
 # $
-PROMPT="
+PROMPT="\
 %F{yellow}%n%f%F{grey}@%f%F{green}%m%f \
 %F{blue}%B%~%f%b\
 $git_info  $exit_code  $hl_time_on_right
-%F{green}$%f "
+%F{green}$%f \
+"
 
