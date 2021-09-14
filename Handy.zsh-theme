@@ -16,32 +16,35 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="$YS_VCS_PROMPT_SUFFIX"
 ZSH_THEME_GIT_PROMPT_DIRTY="$YS_VCS_PROMPT_DIRTY"
 ZSH_THEME_GIT_PROMPT_CLEAN="$YS_VCS_PROMPT_CLEAN"
 
-local exit_code="%F{red}%(?..%?)%f"
+# 使用了三元运算符 %(?.<true expression>.<false expression>)
+local exit_code='%(?.%F{green} ✔︎ 0.%F{red} ✘ %?)%f'
 
-# 在屏幕右侧显示命令时间
-local hl_time_on_right='$(align_right " `get_date_time`")'
+# # 在屏幕右侧显示命令时间 {{{
+# local hl_time_on_right='$(align_right " `get_date_time`")'
 
-function get_space_size() {
-    # ref: http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags
-    local str="$1"
-    local zero_pattern='%([BSUbfksu]|([FB]|){*})'
-    local len=${#${(S%%)str//$~zero_pattern/}}
-    local size=$(( $COLUMNS - $len ))
-    echo "$size"
-}
+# function get_space_size() {
+#     # ref: http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags
+#     local str="$1"
+#     local zero_pattern='%([BSUbfksu]|([FB]|){*})'
+#     local len=${#${(S%%)str//$~zero_pattern/}}
+#     local size=$(( $COLUMNS - $len ))
+#     echo "$size"
+# }
 
-function align_right() {
-    local str="$1"
-    local align_site=`get_space_size "$str"`
-    local cursor_back="\033[${align_site}G"
-    local cursor_begin="\033[1G"
-    echo "${cursor_back}${str}${cursor_begin}"
-}
+# function align_right() {
+#     local str="$1"
+#     local align_site=`get_space_size "$str"`
+#     local cursor_back="\033[${align_site}G"
+#     local cursor_begin="\033[1G"
+#     echo "${cursor_back}${str}${cursor_begin}"
+# }
 
-function get_date_time() {
-    command date "+%H:%M:%S"
-}
+# function get_date_time() {
+#     command date "+%H:%M:%S"
+# }
+# }}}
 
+# {{{
 function _fish_collapsed_pwd() {
     local pwd="$1"
     local home="$HOME"
@@ -79,13 +82,14 @@ function _fish_collapsed_pwd() {
     local IFS="/"
     echo "${elements[*]}"
 }
+# }}}
 
-function echo_blank() {
-    echo
-}
+# function echo_blank() {
+#     echo
+# }
 
 # preexec_functions+=echo_blank
-precmd_functions+=echo_blank
+# precmd_functions+=echo_blank
 
 # Prompt format:
 # PRIVILEGES USER @ MACHINE in DIRECTORY on git:BRANCH STATE [TIME] C:LAST_EXIT_CODE
@@ -94,10 +98,11 @@ precmd_functions+=echo_blank
 # For example:
 # % ys in ~/.oh-my-zsh on git:master x [21:47:42] C:0
 # $
+# Prompt on right of screen
+RPROMPT='%*'
+
 PROMPT="\
-%F{yellow}%n%f%F{grey}@%f%F{green}%m%f \
-%F{blue}%B%~%f%b\
-$git_info  $exit_code  $hl_time_on_right
+%F{yellow}%n%f%F{grey}@%f%F{green}%m%f %F{blue}%B%~%b%f $git_info  $exit_code
 %F{green}$%f \
 "
 
