@@ -14,15 +14,15 @@ Add following to your `$HOME/.zshrc`
 
 ```bash
 zinit snippet OMZL::git.zsh
-zinit light HanleyLee/Handy
+zinit light hanleylee/Handy
 ```
 
 ### [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh)
 
 Firstly, download repo to your local `$ZSH_CUSTOM` dir
 
-```
-git clone https://github.com/HanleyLee/Handy ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/Handy
+```bash
+git clone https://github.com/hanleylee/Handy ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/Handy
 ```
 
 Declare `$ZSH_THEME` inside your `$HOME/.zshrc`
@@ -36,7 +36,8 @@ Done!
 
 ## License
 
-All codes in this warehouse are distributed and used based on [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). For the full text of the agreement, see [LICENSE](https://github.com/HanleyLee/Handy/blob/main/LICENSE) file.
+All codes in this warehouse are distributed and used based on [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). For the full text of
+the agreement, see [LICENSE](https://github.com/hanleylee/Handy/blob/main/LICENSE) file.
 
 Copyright 2021 HanleyLee
 

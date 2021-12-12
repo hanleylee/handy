@@ -91,18 +91,15 @@ function _fish_collapsed_pwd() {
 # preexec_functions+=echo_blank
 # precmd_functions+=echo_blank
 
-# Prompt format:
-# PRIVILEGES USER @ MACHINE in DIRECTORY on git:BRANCH STATE [TIME] C:LAST_EXIT_CODE
-# $ COMMAND
+# Prompt on left of screen
+PROMPT="\
+%F{yellow}%n%f%F{grey}@%f%F{green}%m%f %F{blue}%B%~%b%f $git_info  $exit_code
+%F{green}\$%f \
+"
 
-# For example:
-# % ys in ~/.oh-my-zsh on git:master x [21:47:42] C:0
-# $
 # Prompt on right of screen
 RPROMPT='%*'
 
-PROMPT="\
-%F{yellow}%n%f%F{grey}@%f%F{green}%m%f %F{blue}%B%~%b%f $git_info  $exit_code
-%F{green}$%f \
-"
-
+# For example:
+# hanley@Hanleys-Mac-mini-home ~/.sh  on git:main x   ✘ 1                   21:47:42
+# $
