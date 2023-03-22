@@ -16,13 +16,14 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="$YS_VCS_PROMPT_SUFFIX"
 ZSH_THEME_GIT_PROMPT_DIRTY="$YS_VCS_PROMPT_DIRTY"
 ZSH_THEME_GIT_PROMPT_CLEAN="$YS_VCS_PROMPT_CLEAN"
 
-# 使用了三元运算符 %(?.<true expression>.<false expression>)
+# ternary expression %(?.<true expression>.<false expression>)
 local exit_code='%(?.%F{green} ✔︎ 0.%F{red} ✘ %?)%f'
+local prompt_symbol='%F{green}%(!.#.$)%f'
 
 # Prompt on left of screen
 PROMPT="\
 %F{yellow}%n%f%F{grey}@%f%F{green}%m%f %F{blue}%B%~%b%f $git_info  $exit_code
-%F{green}\$%f \
+$prompt_symbol \
 "
 
 # Prompt on right of screen
