@@ -13,7 +13,7 @@ An extremely light weight zsh prompt.
 Add following to your `$HOME/.zshrc`
 
 ```bash
-zinit snippet OMZL::git.zsh
+zinit for OMZL::git.zsh OMZL::async_prompt.zsh
 zinit light hanleylee/Handy
 ```
 
